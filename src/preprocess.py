@@ -1,7 +1,8 @@
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
-from src.config import features, features_num, features_cat, target
+from sklearn.pipeline import Pipeline
+from src.config import FEATURES, FEATURES_CAT, FEATURES_NUM, TARGET, MODELS_PARAMETERS
 import pandas as pd
 
 def total_charges(df):
@@ -35,3 +36,9 @@ def create_preprocessor(features_num,features_cat):
             ('cat', OneHotEncoder(handle_unknown='ignore'), features_cat)
         ]
     )
+    
+def build_pipeline(model):
+    return Pipeline(steps=[
+        ('preprocessor',create_preprocessor()),
+        ('model', model)
+    ])
