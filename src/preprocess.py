@@ -39,6 +39,6 @@ def create_preprocessor(features_num,features_cat):
     
 def build_pipeline(model):
     return Pipeline(steps=[
-        ('preprocessor',create_preprocessor()),
+        ('preprocessor',create_preprocessor(FEATURES_NUM,FEATURES_CAT)),
         ('model', model)
     ])
