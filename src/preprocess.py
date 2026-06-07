@@ -42,3 +42,10 @@ def build_pipeline(model):
         ('preprocessor',create_preprocessor(FEATURES_NUM,FEATURES_CAT)),
         ('model', model)
     ])
+
+def create_pipeline():
+
+    return{
+        nome: build_pipeline(modelo)
+        for nome, modelo in MODELS_PARAMETERS.items()
+    }

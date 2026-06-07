@@ -3,22 +3,15 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from src.config import FEATURES, FEATURES_CAT, FEATURES_NUM, TARGET, MODELS_PARAMETERS
-from src.preprocess import total_charges, churn_mapped, train_test, create_preprocessor, build_pipeline
+from src.preprocess import total_charges, churn_mapped, train_test, create_preprocessor, build_pipeline, create_pipeline
 import pandas as pd
 
-
-def pipeline():
-
-    return{
-        nome: build_pipeline(modelo)
-        for nome, modelo in MODELS_PARAMETERS.items()
-    }
     
 def train_model(X_train, y_train):
-    pipeline = build_pipeline(nome)
+    pipelines = create_pipeline()
     
-    for nome, pipeline in pipeline.items():
+    for nome, pipeline in pipelines.items():
         pipeline.fit(X_train, y_train)
         print(f"Modelo {nome} treinado")
     
-    return pipeline
+    return pipelines
