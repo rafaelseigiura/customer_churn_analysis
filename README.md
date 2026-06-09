@@ -13,23 +13,23 @@ Contém informações como tempo de relacionamento, valor gasto por mês e gasto
 ## Estrutura do projeto
 customer_churn_analysis/
 
-├── data/
-│   └── raw/
-│   
-│
-├── notebooks/
-│   ├── 01 - EDA.ipynb
-│   ├── 02 - model_evaluate.ipynb
-│   ├── 03 - analysis.ipynb
-│   └── 04 - shap_interpretability.ipynb
-│
-├── src/
-│   ├── data/
-│   ├── features/
-│   ├── models/
-│   └── utils/
-│
-└── README.md
+├── data/  
+│   └── raw/  
+│     
+│  
+├── notebooks/  
+│   ├── 01 - EDA.ipynb  
+│   ├── 02 - model_evaluate.ipynb  
+│   ├── 03 - analysis.ipynb  
+│   └── 04 - shap_interpretability.ipynb  
+│  
+├── src/  
+│   ├── data/  
+│   ├── features/  
+│   ├── models/  
+│   └── utils/  
+│  
+└── README.md 
 
 ## Principais Etapas
 
